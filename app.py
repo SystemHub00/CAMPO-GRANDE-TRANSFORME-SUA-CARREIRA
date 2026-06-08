@@ -71,8 +71,8 @@ SCHEDULE_OPTIONS = {
 }
 
 START_DATE_OPTIONS = {
-    "1": "08/06/2026",  # Seg/Qua turmas
-    "2": "09/06/2026",  # Ter/Qui turmas
+    "1": "15/06/2026",  # Seg/Qua turmas
+    "2": "16/06/2026",  # Ter/Qui turmas
 }
 
 END_DATE_OPTIONS = {
@@ -81,7 +81,7 @@ END_DATE_OPTIONS = {
 }
 
 ADDRESS_OPTIONS = {
-    "1": "📍Estrada do Magarça, n° 3982, Campo Grande/RJ - Cep: 23033-320",
+    "1": "&#128205;Estrada do Magarça, n° 3982, Campo Grande/RJ - Cep: 23033-320",
 }
 
 
@@ -172,7 +172,6 @@ TEMPLATE_WIZARD = r'''
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <!-- IMPORTANTE! viewport responsivo para celular -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>FGM</title>
     <link rel="stylesheet" href="/static/style.css">
@@ -200,15 +199,8 @@ TEMPLATE_WIZARD = r'''
             --sombra-card: 0 18px 55px rgba(17, 85, 204, 0.18);
         }
 
-        * {
-            box-sizing: border-box;
-        }
-
-        html, body {
-            min-height: 100%;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; }
+        html, body { min-height: 100%; margin: 0; padding: 0; }
 
         body {
             min-height: 100vh;
@@ -242,16 +234,12 @@ TEMPLATE_WIZARD = r'''
         }
 
         .wizard-track {
-            width: 100%;
-            height: 14px;
-            background: #dbe6fb;
-            border-radius: 999px;
-            overflow: hidden;
+            width: 100%; height: 14px;
+            background: #dbe6fb; border-radius: 999px; overflow: hidden;
         }
 
         .wizard-fill {
-            height: 100%;
-            width: 25%;
+            height: 100%; width: 25%;
             background: linear-gradient(90deg, #1155cc 0%, #4f86ea 100%);
             border-radius: 999px;
             transition: width 0.3s ease;
@@ -260,18 +248,14 @@ TEMPLATE_WIZARD = r'''
         .wizard-labels {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            margin-top: 14px;
+            gap: 10px; margin-top: 14px;
         }
 
         .wizard-label {
             padding: 12px 10px;
-            border: 1px solid #c9daf8;
-            border-radius: 18px;
-            background: #fff;
-            color: #2f5fb4;
-            font-size: 0.92rem;
-            font-weight: 700;
+            border: 1px solid #c9daf8; border-radius: 18px;
+            background: #fff; color: #2f5fb4;
+            font-size: 0.92rem; font-weight: 700;
             text-align: center;
             transition: all 0.25s ease;
         }
@@ -298,89 +282,49 @@ TEMPLATE_WIZARD = r'''
             margin: 0 auto;
         }
 
-        .wizard-panel {
-            display: none;
-            padding: 18px 8px 18px 8px;
-            animation: surgir 0.28s ease;
-        }
-
-        .wizard-panel.ativo {
-            display: block;
-        }
+        .wizard-panel { display: none; padding: 18px 8px; animation: surgir 0.28s ease; }
+        .wizard-panel.ativo { display: block; }
 
         @keyframes surgir {
-            from {
-                opacity: 0;
-                transform: translateY(12px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(12px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
 
         .hero-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr);
-            gap: 14px;
-            align-items: center;
-            justify-items: center;
+            display: grid; grid-template-columns: minmax(0, 1fr);
+            gap: 14px; align-items: center; justify-items: center;
         }
 
         .hero-card {
-            padding: 32px;
-            border-radius: 30px;
+            padding: 32px; border-radius: 30px;
             background: linear-gradient(135deg, #fff 0%, #f5f9ff 58%, #dfeaff 100%);
-            border: 1px solid #c9daf8;
-            width: 100%;
-            text-align: center;
+            border: 1px solid #c9daf8; width: 100%; text-align: center;
         }
 
         .hero-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 18px;
-            border-radius: 999px;
-            background: var(--cor-principal);
-            color: #fff;
-            font-size: 0.95rem;
-            font-weight: 800;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 18px; border-radius: 999px;
+            background: var(--cor-principal); color: #fff;
+            font-size: 0.95rem; font-weight: 800;
+            letter-spacing: 0.05em; text-transform: uppercase;
         }
 
-        .hero-title,
-        .panel-title {
-            margin: 18px 0 10px;
-            color: var(--cor-principal);
+        .hero-title, .panel-title {
+            margin: 18px 0 10px; color: var(--cor-principal);
             font-size: clamp(2rem, 3.8vw, 3.2rem);
-            line-height: 1;
-            letter-spacing: -0.04em;
+            line-height: 1; letter-spacing: -0.04em;
         }
 
-        .panel-title {
-            font-size: clamp(1.7rem, 3vw, 2.4rem);
+        .panel-title { font-size: clamp(1.7rem, 3vw, 2.4rem); }
+
+        .hero-subtitle, .panel-subtitle {
+            margin: 0; color: #2f5fb4;
+            font-size: 1.05rem; line-height: 1.55;
         }
 
-        .hero-subtitle,
-        .panel-subtitle {
-            margin: 0;
-            color: #2f5fb4;
-            font-size: 1.05rem;
-            line-height: 1.55;
-        }
+        .hero-highlights { display: grid; gap: 10px; margin-top: 16px; }
 
-        .hero-highlights {
-            display: grid;
-            gap: 10px;
-            margin-top: 16px;
-        }
-
-        .hero-highlight,
-        .info-card,
-        .review-box,
-        .step-card {
+        .hero-highlight, .info-card, .review-box, .step-card {
             border-radius: 22px;
             border: 1px solid #d7e3fb;
             background: #fff;
@@ -388,191 +332,96 @@ TEMPLATE_WIZARD = r'''
         }
 
         .hero-highlight {
-            padding: 12px 14px;
-            color: #2f5fb4;
-            font-size: 0.95rem;
-            font-weight: 700;
+            padding: 12px 14px; color: #2f5fb4;
+            font-size: 0.95rem; font-weight: 700;
         }
 
-        .hero-highlight--courses {
-            text-align: left;
-        }
+        .hero-highlight--courses { text-align: left; }
 
         .hero-highlight strong {
-            display: block;
-            color: var(--cor-principal);
-            font-size: 1.15rem;
-            margin-bottom: 4px;
+            display: block; color: var(--cor-principal);
+            font-size: 1.15rem; margin-bottom: 4px;
         }
 
-        .benefits-slider {
-            display: grid;
-            gap: 12px;
-            margin-top: 8px;
-        }
+        .benefits-slider { display: grid; gap: 12px; margin-top: 8px; }
 
         .benefits-viewport {
-            position: relative;
-            min-height: 76px;
-            overflow: hidden;
+            position: relative; min-height: 76px; overflow: hidden;
         }
 
         .benefit-slide {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px 12px;
-            border-radius: 16px;
-            background: var(--cor-clara);
-            color: var(--cor-principal);
-            font-size: 0.98rem;
-            font-weight: 800;
-            line-height: 1.45;
-            text-align: center;
-            opacity: 0;
-            transform: translateX(18px);
+            position: absolute; inset: 0;
+            display: flex; align-items: center; justify-content: center;
+            padding: 10px 12px; border-radius: 16px;
+            background: var(--cor-clara); color: var(--cor-principal);
+            font-size: 0.98rem; font-weight: 800;
+            line-height: 1.45; text-align: center;
+            opacity: 0; transform: translateX(18px);
             transition: opacity 0.28s ease, transform 0.28s ease;
             pointer-events: none;
         }
 
         .benefit-slide.ativo {
-            opacity: 1;
-            transform: translateX(0);
-            pointer-events: auto;
+            opacity: 1; transform: translateX(0); pointer-events: auto;
         }
 
         .benefits-controls {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
         }
 
         .benefits-nav {
-            min-width: 44px;
-            min-height: 44px;
-            border: none;
-            border-radius: 999px;
-            background: #fff;
-            color: var(--cor-principal);
+            min-width: 44px; min-height: 44px; border: none; border-radius: 999px;
+            background: #fff; color: var(--cor-principal);
             box-shadow: 0 6px 16px rgba(17, 85, 204, 0.14);
-            font: inherit;
-            font-size: 1.1rem;
-            font-weight: 900;
-            cursor: pointer;
+            font: inherit; font-size: 1.1rem; font-weight: 900; cursor: pointer;
         }
 
         .benefits-dots {
-            display: flex;
-            gap: 6px;
-            align-items: center;
-            justify-content: center;
+            display: flex; gap: 6px; align-items: center; justify-content: center;
         }
 
         .benefits-dot {
-            width: 9px;
-            height: 9px;
-            border-radius: 999px;
-            background: #b7cbf4;
+            width: 9px; height: 9px; border-radius: 999px; background: #b7cbf4;
             transition: transform 0.2s ease, background 0.2s ease;
         }
 
-        .benefits-dot.ativo {
-            background: var(--cor-principal);
-            transform: scale(1.2);
-        }
+        .benefits-dot.ativo { background: var(--cor-principal); transform: scale(1.2); }
 
-        .timeline-card {
-            padding: 14px 10px;
-            background: linear-gradient(180deg, #1155cc 0%, #4f86ea 100%);
-            color: #fff;
-        }
-
-        .timeline-card h2 {
-            margin: 0 0 14px;
-            font-size: 1.5rem;
-        }
-
-        .timeline-list {
-            display: grid;
-            gap: 12px;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .timeline-list li {
-            padding: 14px 16px;
-            border-radius: 18px;
-            background: rgba(255, 255, 255, 0.14);
-            font-size: 0.98rem;
-            line-height: 1.45;
-        }
-
-        .timeline-list strong {
-            display: block;
-            margin-bottom: 3px;
-            font-size: 1rem;
-        }
-
-        .step-card {
-            padding: 18px 16px;
-            width: 100%;
-            margin: 0 auto;
-            text-align: center;
-        }
+        .step-card { padding: 18px 16px; width: 100%; margin: 0 auto; text-align: center; }
 
         .step-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 10px 12px;
-            margin-top: 10px;
-            align-items: start;
-            justify-content: center;
+            gap: 10px 12px; margin-top: 10px;
+            align-items: start; justify-content: center;
         }
 
         .step-grid.step-grid--single {
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            max-width: 760px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 760px; margin-left: auto; margin-right: auto;
         }
 
         .step-grid.step-grid--stacked {
             grid-template-columns: minmax(0, 1fr);
-            max-width: 540px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 540px; margin-left: auto; margin-right: auto;
         }
 
         .wizard-panel[data-step="dados"] .form-group,
         .wizard-panel[data-step="escolher"] .form-group {
-            align-items: stretch;
-            text-align: left;
+            align-items: stretch; text-align: left;
         }
 
         .wizard-panel[data-step="dados"] .form-group label,
         .wizard-panel[data-step="escolher"] .form-group label {
-            width: 100%;
-            text-align: left;
+            width: 100%; text-align: left;
         }
 
-        .wizard-panel[data-step="escolher"] .step-grid.step-grid--stacked {
-            max-width: 470px;
-        }
+        .wizard-panel[data-step="escolher"] .step-grid.step-grid--stacked { max-width: 470px; }
 
         .wizard-panel[data-step="escolher"] .form-group,
-        .wizard-panel[data-step="escolher"] .form-group.full {
-            width: 100%;
-            max-width: 100%;
-        }
+        .wizard-panel[data-step="escolher"] .form-group.full { width: 100%; max-width: 100%; }
 
-        .wizard-panel[data-step="escolher"] .input-with-action {
-            width: 100%;
-            max-width: 100%;
-        }
+        .wizard-panel[data-step="escolher"] .input-with-action { width: 100%; max-width: 100%; }
 
         .wizard-panel[data-step="escolher"] #local,
         .wizard-panel[data-step="escolher"] #curso,
@@ -582,67 +431,43 @@ TEMPLATE_WIZARD = r'''
         .wizard-panel[data-step="escolher"] #data_inicio,
         .wizard-panel[data-step="escolher"] #encerramento,
         .wizard-panel[data-step="escolher"] #endereco_curso {
-            width: 100% !important;
-            min-width: 0 !important;
-            max-width: 100% !important;
-            margin: 0 !important;
+            width: 100% !important; min-width: 0 !important;
+            max-width: 100% !important; margin: 0 !important;
         }
 
         .wizard-panel[data-step="escolher"] .form-group.full:last-child {
-            max-width: 100%;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 100%; margin-left: auto; margin-right: auto;
         }
 
         .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            width: 100%;
-            align-self: start;
-            align-items: center;
-            text-align: center;
+            display: flex; flex-direction: column; gap: 4px;
+            width: 100%; align-self: start;
+            align-items: center; text-align: center;
         }
 
-        .form-group.full {
-            grid-column: 1 / -1;
-        }
+        .form-group.full { grid-column: 1 / -1; }
 
-        .form-group label,
-        .review-title,
-        .mini-title {
-            color: var(--cor-principal);
-            font-size: 1rem;
-            font-weight: 800;
+        .form-group label, .review-title, .mini-title {
+            color: var(--cor-principal); font-size: 1rem; font-weight: 800;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
             display: block;
-            width: 100% !important;
-            max-width: 100% !important;
-            min-width: 0 !important;
-            margin: 0 !important;
+            width: 100% !important; max-width: 100% !important;
+            min-width: 0 !important; margin: 0 !important;
             box-sizing: border-box;
-            min-height: 38px;
-            height: 38px;
+            min-height: 38px; height: 38px;
             padding: 7px 10px;
-            border: 1.2px solid var(--cor-borda);
-            border-radius: 10px;
-            background: #f5f9ff;
-            color: var(--cor-texto);
-            font: inherit;
-            line-height: 1.2;
-            text-align: left;
-            outline: none;
+            border: 1.2px solid var(--cor-borda); border-radius: 10px;
+            background: #f5f9ff; color: var(--cor-texto);
+            font: inherit; line-height: 1.2; text-align: left; outline: none;
             transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
         }
 
         .form-group select {
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
+            appearance: none; -webkit-appearance: none; -moz-appearance: none;
             background-image: url('data:image/svg+xml;utf8,<svg fill="%231155cc" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
             background-repeat: no-repeat;
             background-position: right 14px center;
@@ -650,11 +475,7 @@ TEMPLATE_WIZARD = r'''
             padding-right: 44px;
         }
 
-        .form-group textarea {
-            min-height: 60px;
-            height: auto;
-            resize: vertical;
-        }
+        .form-group textarea { min-height: 60px; height: auto; resize: vertical; }
 
         .form-group input:focus,
         .form-group select:focus,
@@ -671,126 +492,81 @@ TEMPLATE_WIZARD = r'''
         }
 
         .input-with-action {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr);
-            gap: 10px;
-            align-items: stretch;
-            justify-content: stretch;
+            display: grid; grid-template-columns: minmax(0, 1fr);
+            gap: 10px; align-items: stretch; justify-content: stretch;
         }
 
-        .input-with-action input {
-            width: 100% !important;
-        }
+        .input-with-action input { width: 100% !important; }
 
-        .icon-button,
-        .cta-button,
-        .secondary-button,
-        .submit-button {
-            border: none;
-            border-radius: 18px;
-            font: inherit;
-            font-weight: 800;
-            cursor: pointer;
-            transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease, color 0.16s ease;
+        .icon-button, .cta-button, .secondary-button, .submit-button {
+            border: none; border-radius: 18px;
+            font: inherit; font-weight: 800; cursor: pointer;
+            transition: transform 0.16s ease, box-shadow 0.16s ease,
+                        background 0.16s ease, color 0.16s ease;
         }
 
         .icon-button {
-            min-width: 56px;
-            min-height: 52px;
-            background: var(--cor-principal);
-            color: #fff;
+            min-width: 56px; min-height: 52px;
+            background: var(--cor-principal); color: #fff;
             box-shadow: 0 8px 16px rgba(17, 85, 204, 0.22);
         }
 
         .wizard-panel[data-step="escolher"] .icon-button {
-            width: 100% !important;
-            min-width: 0 !important;
+            width: 100% !important; min-width: 0 !important;
             max-width: 100% !important;
-            height: 38px !important;
-            min-height: 38px !important;
-            padding: 0;
-            border-radius: 10px;
-            box-shadow: none;
+            height: 38px !important; min-height: 38px !important;
+            padding: 0; border-radius: 10px; box-shadow: none;
         }
 
         .panel-actions .cta-button,
         .panel-actions .secondary-button,
         .panel-actions .submit-button {
-            width: 100% !important;
-            max-width: 100% !important;
-            min-width: 0 !important;
-            margin: 0 !important;
-            height: 38px;
-            font-size: 1rem;
+            width: 100% !important; max-width: 100% !important;
+            min-width: 0 !important; margin: 0 !important;
+            height: 38px; font-size: 1rem;
         }
 
-        .cta-button,
-        .submit-button {
+        .cta-button, .submit-button {
             background: linear-gradient(90deg, #1155cc 0%, #4f86ea 100%);
-            color: #fff;
-            box-shadow: 0 10px 24px rgba(17, 85, 204, 0.24);
+            color: #fff; box-shadow: 0 10px 24px rgba(17, 85, 204, 0.24);
         }
 
         .secondary-button {
-            background: #fff;
-            color: var(--cor-principal);
+            background: #fff; color: var(--cor-principal);
             border: 2px solid var(--cor-principal);
         }
 
-        .cta-button,
-        .secondary-button,
-        .submit-button {
-            min-height: 54px;
-            padding: 14px 22px;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
+        .cta-button, .secondary-button, .submit-button {
+            min-height: 54px; padding: 14px 22px;
+            text-transform: uppercase; letter-spacing: 0.04em;
         }
 
-        .cta-button:hover,
-        .secondary-button:hover,
-        .submit-button:hover,
-        .icon-button:hover {
-            transform: translateY(-1px);
-        }
+        .cta-button:hover, .secondary-button:hover,
+        .submit-button:hover, .icon-button:hover { transform: translateY(-1px); }
 
         .panel-actions {
-            display: flex;
-            flex-direction: column-reverse;
-            align-items: center;
-            gap: 12px;
-            justify-content: space-between;
-            margin-top: 28px;
-            max-width: 420px;
-            margin-left: auto;
-            margin-right: auto;
+            display: flex; flex-direction: column-reverse;
+            align-items: center; gap: 12px;
+            justify-content: space-between; margin-top: 28px;
+            max-width: 420px; margin-left: auto; margin-right: auto;
         }
 
-        .panel-actions > * {
-            flex: 1;
-        }
+        .panel-actions > * { flex: 1; }
 
         .helper-text {
-            margin: 0;
-            color: #2f5fb4;
-            font-size: 0.94rem;
-            line-height: 1.5;
+            margin: 0; color: #2f5fb4;
+            font-size: 0.94rem; line-height: 1.5;
         }
 
         .balao-erro {
-            margin-top: 4px;
-            padding: 10px 14px;
+            margin-top: 4px; padding: 10px 14px;
             border-radius: 14px;
-            border: 1px solid #0d47a1;
-            background: #1155cc;
-            color: #fff;
-            font-size: 0.92rem;
-            font-weight: 700;
-            line-height: 1.35;
+            border: 1px solid #0d47a1; background: #1155cc;
+            color: #fff; font-size: 0.92rem;
+            font-weight: 700; line-height: 1.35;
         }
 
-        .balao-erro[hidden] {
-            display: none;
-        }
+        .balao-erro[hidden] { display: none; }
 
         .erro-campo {
             border-color: #1155cc !important;
@@ -798,132 +574,80 @@ TEMPLATE_WIZARD = r'''
         }
 
         .review-layout {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 8px;
-            margin-top: 10px;
-            max-width: 540px;
-            margin-left: auto;
-            margin-right: auto;
+            display: grid; grid-template-columns: 1fr;
+            gap: 8px; margin-top: 10px;
+            max-width: 540px; margin-left: auto; margin-right: auto;
         }
 
-        .review-box {
-            padding: 10px;
-            text-align: center;
-        }
-
-        .review-box.full {
-            grid-column: 1 / -1;
-        }
+        .review-box { padding: 10px; text-align: center; }
+        .review-box.full { grid-column: 1 / -1; }
 
         .review-list {
-            display: grid;
-            gap: 6px;
-            margin-top: 8px;
-            text-align: left;
+            display: grid; gap: 6px; margin-top: 8px; text-align: left;
         }
 
         .review-item {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            align-items: center;
-            column-gap: 8px;
-            padding: 7px 9px;
-            border-radius: 10px;
-            background: var(--cor-clara);
-            text-align: left;
+            display: grid; grid-template-columns: auto 1fr;
+            align-items: center; column-gap: 8px;
+            padding: 7px 9px; border-radius: 10px;
+            background: var(--cor-clara); text-align: left;
         }
 
         .review-item strong {
             color: var(--cor-principal);
-            font-size: 0.88rem;
-            white-space: nowrap;
+            font-size: 0.88rem; white-space: nowrap;
         }
 
-        .review-item strong::after {
-            content: ':';
-        }
+        .review-item strong::after { content: ':'; }
 
         .review-item span {
-            color: var(--cor-texto);
-            font-size: 0.94rem;
-            word-break: break-word;
-            text-align: left;
+            color: var(--cor-texto); font-size: 0.94rem;
+            word-break: break-word; text-align: left;
         }
 
         .review-check {
-            display: flex;
-            gap: 12px;
-            align-items: flex-start;
-            justify-content: flex-start;
-            padding: 10px 12px;
-            border-radius: 14px;
-            background: var(--cor-clara);
-            color: #6e3d37;
-            line-height: 1.45;
-            text-align: left;
+            display: flex; gap: 12px;
+            align-items: flex-start; justify-content: flex-start;
+            padding: 10px 12px; border-radius: 14px;
+            background: var(--cor-clara); color: #6e3d37;
+            line-height: 1.45; text-align: left;
         }
 
         .review-check input {
-                margin-top: 3px;
-                width: 20px;
-                min-width: 20px;
-                height: 20px;
-                flex: 0 0 20px;
+            margin-top: 3px;
+            width: 20px; min-width: 20px;
+            height: 20px; flex: 0 0 20px;
             accent-color: var(--cor-principal);
         }
 
-            .review-check span {
-                flex: 1 1 auto;
-                min-width: 0;
-            }
+        .review-check span { flex: 1 1 auto; min-width: 0; }
 
         .review-check ul {
-            margin: 8px 0 0 18px;
-            padding: 0;
-            list-style-position: outside;
-            text-align: left;
+            margin: 8px 0 0 18px; padding: 0;
+            list-style-position: outside; text-align: left;
         }
 
-        .review-box .form-group {
-            align-items: stretch;
-            text-align: left;
-        }
-
-        .review-box .form-group label {
-            width: 100%;
-            text-align: left;
-        }
+        .review-box .form-group { align-items: stretch; text-align: left; }
+        .review-box .form-group label { width: 100%; text-align: left; }
 
         .mini-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 14px;
-            justify-content: center;
+            display: flex; flex-wrap: wrap; gap: 8px;
+            margin-top: 14px; justify-content: center;
         }
 
         .mini-badge {
-            padding: 8px 12px;
-            border-radius: 999px;
-            background: var(--cor-clara);
-            color: var(--cor-principal);
-            font-size: 0.86rem;
-            font-weight: 800;
+            padding: 8px 12px; border-radius: 999px;
+            background: var(--cor-clara); color: var(--cor-principal);
+            font-size: 0.86rem; font-weight: 800;
         }
 
         .footer-note {
-            margin-top: 14px;
-            color: #2f5fb4;
-            font-size: 0.9rem;
-            text-align: center;
+            margin-top: 14px; color: #2f5fb4;
+            font-size: 0.9rem; text-align: center;
         }
 
         @media (max-width: 860px) {
-            .hero-grid,
-            .review-layout {
-                grid-template-columns: 1fr;
-            }
+            .hero-grid, .review-layout { grid-template-columns: 1fr; }
             .step-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
                 gap: 8px 8px;
@@ -932,8 +656,7 @@ TEMPLATE_WIZARD = r'''
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
             .step-grid.step-grid--stacked {
-                grid-template-columns: minmax(0, 1fr);
-                max-width: 540px;
+                grid-template-columns: minmax(0, 1fr); max-width: 540px;
             }
             .wizard-panel[data-step="escolher"] .step-grid.step-grid--stacked {
                 max-width: 470px;
@@ -941,154 +664,63 @@ TEMPLATE_WIZARD = r'''
         }
 
         @media (max-width: 640px) {
-            html,
-            body {
-                width: 100% !important;
-                max-width: 100% !important;
+            html, body {
+                width: 100% !important; max-width: 100% !important;
                 overflow-x: hidden !important;
             }
-
-            body * {
-                min-width: 0;
+            body * { min-width: 0; }
+            body { overflow-x: hidden; }
+            .main-header { padding: 10px 12px; }
+            .header-logos { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+            .header-logos img, .logo, .logo-prefeitura-topo {
+                max-width: min(88vw, 280px); height: auto;
             }
-
-            body {
-                overflow-x: hidden;
-            }
-
-            .main-header {
-                padding: 10px 12px;
-            }
-
-            .header-logos {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-
-            .header-logos img,
-            .logo,
-            .logo-prefeitura-topo {
-                max-width: min(88vw, 280px);
-                height: auto;
-            }
-
             .wizard-page {
                 width: calc(100% - 8px) !important;
-                max-width: 100% !important;
-                padding: 4px 0 10px;
+                max-width: 100% !important; padding: 4px 0 10px;
             }
-            .wizard-progress,
-            .wizard-panel {
-                width: 100% !important;
-                max-width: 100% !important;
-                padding: 8px;
+            .wizard-progress, .wizard-panel {
+                width: 100% !important; max-width: 100% !important; padding: 8px;
             }
-            .wizard-labels {
-                grid-template-columns: 1fr;
-                gap: 6px;
-            }
-            .hero-card,
-            .timeline-card,
-            .step-card,
-            .review-box {
-                width: 100% !important;
-                max-width: 100% !important;
-                padding: 8px;
+            .wizard-labels { grid-template-columns: 1fr; gap: 6px; }
+            .hero-card, .step-card, .review-box {
+                width: 100% !important; max-width: 100% !important; padding: 8px;
             }
             .input-with-action {
                 grid-template-columns: minmax(0, 1fr);
-                width: 100% !important;
-                max-width: 100% !important;
+                width: 100% !important; max-width: 100% !important;
             }
-            .panel-actions > * {
-                width: 100%;
-            }
+            .panel-actions > * { width: 100%; }
             .step-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 6px 6px;
+                grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 6px;
             }
             .step-grid.step-grid--single {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
             .step-grid.step-grid--stacked {
-                grid-template-columns: minmax(0, 1fr);
-                max-width: 100%;
+                grid-template-columns: minmax(0, 1fr); max-width: 100%;
             }
-            .review-layout {
-                grid-template-columns: 1fr;
-                max-width: 100%;
-                gap: 10px;
+            .review-layout { grid-template-columns: 1fr; max-width: 100%; gap: 10px; }
+            .review-item, .form-group, .form-group input, .form-group select,
+            .form-group textarea, .wizard-shell, .panel-actions,
+            .review-check, .balao-erro {
+                width: 100% !important; max-width: 100% !important;
             }
-            .review-item,
-            .form-group,
-            .form-group input,
-            .form-group select,
-            .form-group textarea,
-            .wizard-shell,
-            .panel-actions,
-            .review-check,
-            .balao-erro {
-                width: 100% !important;
-                max-width: 100% !important;
+            .form-group label, .review-title, .mini-title, .helper-text,
+            .review-item span, .review-check { word-break: break-word; }
+            img, svg { max-width: 100% !important; height: auto !important; }
+            .form-group input, .form-group select,
+            .form-group textarea, .icon-button {
+                min-height: 32px; height: 32px; font-size: 0.98em;
             }
-            .form-group label,
-            .review-title,
-            .mini-title,
-            .helper-text,
-            .review-item span,
-            .review-check {
-                word-break: break-word;
-            }
-            img,
-            svg {
-                max-width: 100% !important;
-                height: auto !important;
-            }
-            .form-group input,
-            .form-group select,
-            .form-group textarea,
-            .icon-button {
-                min-height: 32px;
-                height: 32px;
-                font-size: 0.98em;
-            }
-            .form-group textarea {
-                min-height: 60px;
-                height: auto;
-            }
-            .review-check {
-                flex-direction: row;
-                align-items: flex-start;
-                padding: 8px;
-            }
-
-            .review-check input {
-                width: 22px;
-                min-width: 22px;
-                height: 22px;
-                flex-basis: 22px;
-            }
-
-            .review-check ul {
-                padding-left: 2px;
-            }
-            .hero-title,
-            .panel-title {
-                font-size: 1.3rem;
-            }
-            .hero-subtitle,
-            .panel-subtitle {
-                font-size: 0.92rem;
-            }
-            .wizard-shell {
-                border-radius: 16px;
-            }
-
-            .form-group.full {
-                grid-column: auto;
-            }
+            .form-group textarea { min-height: 60px; height: auto; }
+            .review-check { flex-direction: row; align-items: flex-start; padding: 8px; }
+            .review-check input { width: 22px; min-width: 22px; height: 22px; flex-basis: 22px; }
+            .review-check ul { padding-left: 2px; }
+            .hero-title, .panel-title { font-size: 1.3rem; }
+            .hero-subtitle, .panel-subtitle { font-size: 0.92rem; }
+            .wizard-shell { border-radius: 16px; }
+            .form-group.full { grid-column: auto; }
         }
     </style>
 </head>
@@ -1129,12 +761,12 @@ TEMPLATE_WIZARD = r'''
                             <div class="hero-highlights">
                                 <div class="hero-highlight hero-highlight--courses">
                                     <strong>CURSOS DISPONÍVEIS:</strong>
-                                        📚 ORIENTADOR DE HOTELARIA<br>
-                                        🎈 MONITOR DE LAZER E RECREAÇÃO<br>
-                                        📚 CAMAREIRO<br>
-                                        🤖 INTELIGÊNCIA ARTIFICIAL<br>
-                                        📚 OPERADOR DE SISTEMA DE COMPOSTAGEM E RESÍDUOS ORGÂNICOS<br>
-                                        📚 GESTOR DE RESÍDUOS SÓLIDOS
+                                    &#128218; ORIENTADOR DE HOTELARIA<br>
+                                    &#127880; MONITOR DE LAZER E RECREAÇÃO<br>
+                                    &#128218; CAMAREIRO<br>
+                                    &#129302; INTELIGÊNCIA ARTIFICIAL<br>
+                                    &#128218; OPERADOR DE SISTEMA DE COMPOSTAGEM E RESÍDUOS ORGÂNICOS<br>
+                                    &#128218; GESTOR DE RESÍDUOS SÓLIDOS
                                 </div>
                                 <div class="hero-highlight">
                                     <strong>BENEFÍCIOS</strong>
@@ -1145,9 +777,9 @@ TEMPLATE_WIZARD = r'''
                                             <div class="benefit-slide">Material Didático Incluso</div>
                                         </div>
                                         <div class="benefits-controls">
-                                            <button type="button" class="benefits-nav" data-benefits-prev aria-label="Benefício anterior">‹</button>
+                                            <button type="button" class="benefits-nav" data-benefits-prev aria-label="Benefício anterior">&#8249;</button>
                                             <div class="benefits-dots" data-benefits-dots></div>
-                                            <button type="button" class="benefits-nav" data-benefits-next aria-label="Próximo benefício">›</button>
+                                            <button type="button" class="benefits-nav" data-benefits-next aria-label="Próximo benefício">&#8250;</button>
                                         </div>
                                     </div>
                                 </div>
@@ -1293,7 +925,7 @@ TEMPLATE_WIZARD = r'''
                                 <label for="endereco_curso">ENDEREÇO</label>
                                 <div class="input-with-action">
                                     <input type="text" id="endereco_curso" name="endereco_curso" class="readonly-field" readonly value="{{ form_data.get('endereco_curso', '') }}">
-                                    <button type="button" class="icon-button" id="btn-copiar-endereco" title="Copiar endereço">COPIAR 📋</button>
+                                    <button type="button" class="icon-button" id="btn-copiar-endereco" title="Copiar endereço">COPIAR &#128203;</button>
                                 </div>
                             </div>
                         </div>
@@ -1384,12 +1016,7 @@ TEMPLATE_WIZARD = r'''
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const stepOrder = ['index', 'dados', 'escolher', 'revisao'];
-            const progressByStep = {
-                index: 25,
-                dados: 45,
-                escolher: 70,
-                revisao: 90,
-            };
+            const progressByStep = { index: 25, dados: 45, escolher: 70, revisao: 90 };
 
             const form = document.getElementById('wizard-form');
             const fill = document.getElementById('wizard-fill');
@@ -1443,18 +1070,14 @@ TEMPLATE_WIZARD = r'''
                 const prevButton = slider.querySelector('[data-benefits-prev]');
                 const nextButton = slider.querySelector('[data-benefits-next]');
 
-                if (!slides.length || !dotsHost || !prevButton || !nextButton) {
-                    return;
-                }
+                if (!slides.length || !dotsHost || !prevButton || !nextButton) return;
 
                 let currentIndex = slides.findIndex(function(slide) {
                     return slide.classList.contains('ativo');
                 });
                 let intervalId;
 
-                if (currentIndex < 0) {
-                    currentIndex = 0;
-                }
+                if (currentIndex < 0) currentIndex = 0;
 
                 const dots = slides.map(function(_, index) {
                     const dot = document.createElement('button');
@@ -1486,23 +1109,10 @@ TEMPLATE_WIZARD = r'''
                     }, 3200);
                 }
 
-                prevButton.addEventListener('click', function() {
-                    mostrarSlide(currentIndex - 1);
-                    reiniciarAutoSlide();
-                });
-
-                nextButton.addEventListener('click', function() {
-                    mostrarSlide(currentIndex + 1);
-                    reiniciarAutoSlide();
-                });
-
-                slider.addEventListener('mouseenter', function() {
-                    window.clearInterval(intervalId);
-                });
-
-                slider.addEventListener('mouseleave', function() {
-                    reiniciarAutoSlide();
-                });
+                prevButton.addEventListener('click', function() { mostrarSlide(currentIndex - 1); reiniciarAutoSlide(); });
+                nextButton.addEventListener('click', function() { mostrarSlide(currentIndex + 1); reiniciarAutoSlide(); });
+                slider.addEventListener('mouseenter', function() { window.clearInterval(intervalId); });
+                slider.addEventListener('mouseleave', function() { reiniciarAutoSlide(); });
 
                 mostrarSlide(currentIndex);
                 reiniciarAutoSlide();
@@ -1512,12 +1122,9 @@ TEMPLATE_WIZARD = r'''
                 panels.forEach(function(panel) {
                     panel.classList.toggle('ativo', panel.dataset.step === step);
                 });
-
                 labels.forEach(function(label) {
-                    const isActive = label.dataset.stepLabel === step;
-                    label.classList.toggle('ativo', isActive);
+                    label.classList.toggle('ativo', label.dataset.stepLabel === step);
                 });
-
                 fill.style.width = (progressByStep[step] || 25) + '%';
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
@@ -1525,41 +1132,22 @@ TEMPLATE_WIZARD = r'''
             function setError(fieldId, message) {
                 const field = document.getElementById(fieldId);
                 const error = document.getElementById(fieldId + '-error');
-                if (field) {
-                    field.classList.toggle('erro-campo', Boolean(message));
-                }
-                if (error) {
-                    error.textContent = message || '';
-                    error.hidden = !message;
-                }
+                if (field) field.classList.toggle('erro-campo', Boolean(message));
+                if (error) { error.textContent = message || ''; error.hidden = !message; }
             }
 
             function validarCPF(cpf) {
                 const digits = somenteDigitos(cpf);
-                if (digits.length !== 11 || /^(\d)\1+$/.test(digits)) {
-                    return false;
-                }
-
+                if (digits.length !== 11 || /^(\d)\1+$/.test(digits)) return false;
                 let soma = 0;
-                for (let index = 0; index < 9; index += 1) {
-                    soma += Number(digits.charAt(index)) * (10 - index);
-                }
+                for (let i = 0; i < 9; i++) soma += Number(digits.charAt(i)) * (10 - i);
                 let digito = (soma * 10) % 11;
-                if (digito === 10) {
-                    digito = 0;
-                }
-                if (digito !== Number(digits.charAt(9))) {
-                    return false;
-                }
-
+                if (digito === 10) digito = 0;
+                if (digito !== Number(digits.charAt(9))) return false;
                 soma = 0;
-                for (let index = 0; index < 10; index += 1) {
-                    soma += Number(digits.charAt(index)) * (11 - index);
-                }
+                for (let i = 0; i < 10; i++) soma += Number(digits.charAt(i)) * (11 - i);
                 digito = (soma * 10) % 11;
-                if (digito === 10) {
-                    digito = 0;
-                }
+                if (digito === 10) digito = 0;
                 return digito === Number(digits.charAt(10));
             }
 
@@ -1569,29 +1157,14 @@ TEMPLATE_WIZARD = r'''
 
             function idadePermitida(valor) {
                 const partes = (valor || '').split('/');
-                if (partes.length !== 3) {
-                    return false;
-                }
-
-                const dia = Number(partes[0]);
-                const mes = Number(partes[1]) - 1;
-                const ano = Number(partes[2]);
+                if (partes.length !== 3) return false;
+                const dia = Number(partes[0]), mes = Number(partes[1]) - 1, ano = Number(partes[2]);
                 const data = new Date(ano, mes, dia);
-                if (
-                    Number.isNaN(data.getTime()) ||
-                    data.getDate() !== dia ||
-                    data.getMonth() !== mes ||
-                    data.getFullYear() !== ano
-                ) {
-                    return false;
-                }
-
+                if (isNaN(data.getTime()) || data.getDate() !== dia || data.getMonth() !== mes || data.getFullYear() !== ano) return false;
                 const hoje = new Date();
                 let idade = hoje.getFullYear() - data.getFullYear();
                 const monthDiff = hoje.getMonth() - data.getMonth();
-                if (monthDiff < 0 || (monthDiff === 0 && hoje.getDate() < data.getDate())) {
-                    idade -= 1;
-                }
+                if (monthDiff < 0 || (monthDiff === 0 && hoje.getDate() < data.getDate())) idade -= 1;
                 return idade >= 16 && idade <= 90;
             }
 
@@ -1601,76 +1174,51 @@ TEMPLATE_WIZARD = r'''
 
             function validarDDD(whatsapp) {
                 const digits = somenteDigitos(whatsapp);
-                if (digits.length < 11) {
-                    return false;
-                }
-                return [
-                    '11', '12', '13', '14', '15', '16', '17', '18', '19',
-                    '21', '22', '24', '27', '28',
-                    '31', '32', '33', '34', '35', '37', '38',
-                    '41', '42', '43', '44', '45', '46', '47', '48', '49',
-                    '51', '53', '54', '55',
-                    '61', '62', '63', '64', '65', '66', '67', '68', '69',
-                    '71', '73', '74', '75', '77', '79',
-                    '81', '82', '83', '84', '85', '86', '87', '88', '89',
-                    '91', '92', '93', '94', '95', '96', '97', '98', '99'
-                ].includes(digits.slice(0, 2));
+                if (digits.length < 11) return false;
+                return ['11','12','13','14','15','16','17','18','19','21','22','24','27','28',
+                        '31','32','33','34','35','37','38','41','42','43','44','45','46','47','48','49',
+                        '51','53','54','55','61','62','63','64','65','66','67','68','69',
+                        '71','73','74','75','77','79','81','82','83','84','85','86','87','88','89',
+                        '91','92','93','94','95','96','97','98','99'].includes(digits.slice(0, 2));
             }
 
             function aplicarMascaraCPF() {
-                let valor = somenteDigitos(cpfInput.value).slice(0, 11);
-                if (valor.length > 9) {
-                    valor = valor.replace(/(\d{3})(\d{3})(\d{3})(\d{1,2})/, '$1.$2.$3-$4');
-                } else if (valor.length > 6) {
-                    valor = valor.replace(/(\d{3})(\d{3})(\d{1,3})/, '$1.$2.$3');
-                } else if (valor.length > 3) {
-                    valor = valor.replace(/(\d{3})(\d{1,3})/, '$1.$2');
-                }
-                cpfInput.value = valor;
+                let v = somenteDigitos(cpfInput.value).slice(0, 11);
+                if (v.length > 9) v = v.replace(/(\d{3})(\d{3})(\d{3})(\d{1,2})/, '$1.$2.$3-$4');
+                else if (v.length > 6) v = v.replace(/(\d{3})(\d{3})(\d{1,3})/, '$1.$2.$3');
+                else if (v.length > 3) v = v.replace(/(\d{3})(\d{1,3})/, '$1.$2');
+                cpfInput.value = v;
             }
 
             function aplicarMascaraNascimento() {
-                let valor = somenteDigitos(nascimentoInput.value).slice(0, 8);
-                if (valor.length > 4) {
-                    valor = valor.replace(/(\d{2})(\d{2})(\d{1,4})/, '$1/$2/$3');
-                } else if (valor.length > 2) {
-                    valor = valor.replace(/(\d{2})(\d{1,2})/, '$1/$2');
-                }
-                nascimentoInput.value = valor;
+                let v = somenteDigitos(nascimentoInput.value).slice(0, 8);
+                if (v.length > 4) v = v.replace(/(\d{2})(\d{2})(\d{1,4})/, '$1/$2/$3');
+                else if (v.length > 2) v = v.replace(/(\d{2})(\d{1,2})/, '$1/$2');
+                nascimentoInput.value = v;
             }
 
             function aplicarMascaraWhatsapp() {
-                let valor = somenteDigitos(whatsappInput.value).slice(0, 11);
-                if (valor.length > 6) {
-                    valor = valor.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
-                } else if (valor.length > 2) {
-                    valor = valor.replace(/(\d{2})(\d{1,5})/, '($1) $2');
-                }
-                whatsappInput.value = valor;
+                let v = somenteDigitos(whatsappInput.value).slice(0, 11);
+                if (v.length > 6) v = v.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+                else if (v.length > 2) v = v.replace(/(\d{2})(\d{1,5})/, '($1) $2');
+                whatsappInput.value = v;
             }
 
             function aplicarMascaraCep() {
-                let valor = somenteDigitos(cepInput.value).slice(0, 8);
-                if (valor.length > 5) {
-                    valor = valor.replace(/(\d{5})(\d{1,3})/, '$1-$2');
-                }
-                cepInput.value = valor;
+                let v = somenteDigitos(cepInput.value).slice(0, 8);
+                if (v.length > 5) v = v.replace(/(\d{5})(\d{1,3})/, '$1-$2');
+                cepInput.value = v;
             }
 
             function syncReview() {
                 reviewTargets.forEach(function(target) {
                     const field = document.getElementById(target.dataset.review);
-                    if (!field) {
-                        target.textContent = '';
-                        return;
-                    }
-
+                    if (!field) { target.textContent = ''; return; }
                     if (field.tagName === 'SELECT') {
                         const selectedOption = field.options[field.selectedIndex];
                         target.textContent = selectedOption ? selectedOption.text.trim() : '';
                         return;
                     }
-
                     target.textContent = field.value.trim();
                 });
             }
@@ -1678,13 +1226,11 @@ TEMPLATE_WIZARD = r'''
             function setSelectOptions(select, items, placeholder, selectedValue, labelKey) {
                 const currentValue = String(selectedValue || '');
                 select.innerHTML = '';
-
                 const placeholderOption = document.createElement('option');
                 placeholderOption.value = '';
                 placeholderOption.textContent = placeholder;
                 placeholderOption.selected = !currentValue;
                 select.appendChild(placeholderOption);
-
                 items.forEach(function(item) {
                     const option = document.createElement('option');
                     option.value = String(item.id);
@@ -1727,12 +1273,7 @@ TEMPLATE_WIZARD = r'''
 
             function aplicarOpcaoCurso(optionId) {
                 const option = courseOptionsById[String(optionId)];
-                if (!option) {
-                    turmaInput.value = '';
-                    limparDetalhesCurso();
-                    return;
-                }
-
+                if (!option) { turmaInput.value = ''; limparDetalhesCurso(); return; }
                 localSelect.value = String(option.local_id);
                 courseSelect.value = String(option.curso_id);
                 localInput.value = option.local;
@@ -1762,90 +1303,51 @@ TEMPLATE_WIZARD = r'''
             }
 
             function validarNome() {
-                const valor = nomeInput.value.trim();
-                if (!valor) {
-                    setError('nome', 'Digite seu nome completo.');
-                    return false;
-                }
-                if (valor.length > 50) {
-                    setError('nome', 'O nome deve ter no máximo 50 caracteres.');
-                    return false;
-                }
-                if (!/^[A-Za-zÀ-ÿ '´`^~.-]+$/.test(valor)) {
-                    setError('nome', 'Use apenas letras e sinais permitidos no nome.');
-                    return false;
-                }
-                setError('nome', '');
-                return true;
+                const v = nomeInput.value.trim();
+                if (!v) { setError('nome', 'Digite seu nome completo.'); return false; }
+                if (v.length > 50) { setError('nome', 'O nome deve ter no máximo 50 caracteres.'); return false; }
+                if (!/^[A-Za-zÀ-ÿ '´`^~.-]+$/.test(v)) { setError('nome', 'Use apenas letras e sinais permitidos no nome.'); return false; }
+                setError('nome', ''); return true;
             }
 
             function validarGenero() {
-                if (!generoInput.value) {
-                    setError('genero', 'Selecione o gênero.');
-                    return false;
-                }
-                setError('genero', '');
-                return true;
+                if (!generoInput.value) { setError('genero', 'Selecione o gênero.'); return false; }
+                setError('genero', ''); return true;
             }
 
             function validarCampoCPF() {
-                if (!validarCPF(cpfInput.value)) {
-                    setError('cpf', 'CPF inválido. Verifique e digite novamente.');
-                    return false;
-                }
-                setError('cpf', '');
-                return true;
+                if (!validarCPF(cpfInput.value)) { setError('cpf', 'CPF inválido. Verifique e digite novamente.'); return false; }
+                setError('cpf', ''); return true;
             }
 
             function validarNascimento() {
-                if (!idadePermitida(nascimentoInput.value)) {
-                    setError('nascimento', 'Idade permitida: de 16 até 90 anos.');
-                    return false;
-                }
-                setError('nascimento', '');
-                return true;
+                if (!idadePermitida(nascimentoInput.value)) { setError('nascimento', 'Idade permitida: de 16 até 90 anos.'); return false; }
+                setError('nascimento', ''); return true;
             }
 
             function validarWhatsapp() {
                 const digits = somenteDigitos(whatsappInput.value);
                 if (digits.length !== 11 || !/^\(\d{2}\) \d{5}-\d{4}$/.test(whatsappInput.value) || !validarDDD(whatsappInput.value)) {
-                    setError('whatsapp', 'Informe um WhatsApp com DDD válido do Brasil.');
-                    return false;
+                    setError('whatsapp', 'Informe um WhatsApp com DDD válido do Brasil.'); return false;
                 }
-                setError('whatsapp', '');
-                return true;
+                setError('whatsapp', ''); return true;
             }
 
             function validarCampoCep() {
-                if (!validarCep(cepInput.value)) {
-                    setError('cep', 'CEP inválido. Formato: 00000-000.');
-                    return false;
-                }
-                setError('cep', '');
-                return true;
+                if (!validarCep(cepInput.value)) { setError('cep', 'CEP inválido. Formato: 00000-000.'); return false; }
+                setError('cep', ''); return true;
             }
 
             function validarBairro() {
-                const valor = bairroInput.value.trim();
-                if (!valor) {
-                    setError('bairro', 'Informe o bairro.');
-                    return false;
-                }
-                if (valor.length > 40) {
-                    setError('bairro', 'O bairro deve ter no máximo 40 caracteres.');
-                    return false;
-                }
-                setError('bairro', '');
-                return true;
+                const v = bairroInput.value.trim();
+                if (!v) { setError('bairro', 'Informe o bairro.'); return false; }
+                if (v.length > 40) { setError('bairro', 'O bairro deve ter no máximo 40 caracteres.'); return false; }
+                setError('bairro', ''); return true;
             }
 
             function validarCampoEmail() {
-                if (!validarEmail(emailInput.value)) {
-                    setError('email', 'Digite um e-mail válido do Gmail, Hotmail, Outlook ou Yahoo.');
-                    return false;
-                }
-                setError('email', '');
-                return true;
+                if (!validarEmail(emailInput.value)) { setError('email', 'Digite um e-mail válido do Gmail, Hotmail, Outlook ou Yahoo.'); return false; }
+                setError('email', ''); return true;
             }
 
             function validarPassoDados() {
@@ -1859,144 +1361,82 @@ TEMPLATE_WIZARD = r'''
                     { ok: validarBairro(), field: bairroInput },
                     { ok: validarCampoEmail(), field: emailInput },
                 ];
-                const primeiraInvalida = validacoes.find(function(item) {
-                    return !item.ok;
-                });
-                if (primeiraInvalida) {
-                    primeiraInvalida.field.focus();
-                    return false;
-                }
+                const primeiraInvalida = validacoes.find(function(item) { return !item.ok; });
+                if (primeiraInvalida) { primeiraInvalida.field.focus(); return false; }
                 return true;
             }
 
             function validarPassoRevisao() {
                 if (!confirmaDadosInput.checked) {
                     setError('confirma_dados', 'Confirme os dados para finalizar a inscrição.');
-                    confirmaDadosInput.focus();
-                    return false;
+                    confirmaDadosInput.focus(); return false;
                 }
-                setError('confirma_dados', '');
-                return true;
+                setError('confirma_dados', ''); return true;
             }
 
             function validarPassoEscolher() {
                 if (!courseCatalogById[String(courseSelect.value)]) {
-                    setError('curso_id', 'Selecione um curso válido.');
-                    courseSelect.focus();
-                    return false;
+                    setError('curso_id', 'Selecione um curso válido.'); courseSelect.focus(); return false;
                 }
                 setError('curso_id', '');
-
                 if (!courseOptionsById[String(optionInput.value)]) {
-                    setError('opcao_id', 'Selecione uma turma válida.');
-                    optionInput.focus();
-                    return false;
+                    setError('opcao_id', 'Selecione uma turma válida.'); optionInput.focus(); return false;
                 }
-                setError('opcao_id', '');
-                return true;
+                setError('opcao_id', ''); return true;
             }
 
             async function buscarBairroPorCep() {
                 const cepLimpo = somenteDigitos(cepInput.value);
-                if (cepLimpo.length !== 8) {
-                    return;
-                }
-
+                if (cepLimpo.length !== 8) return;
                 try {
                     const response = await fetch('https://viacep.com.br/ws/' + cepLimpo + '/json/');
                     const data = await response.json();
-                    if (!data.erro && data.bairro) {
-                        bairroInput.value = data.bairro;
-                        validarBairro();
-                        syncReview();
-                    }
-                } catch (error) {
-                    console.error('Erro ao buscar CEP:', error);
-                }
+                    if (!data.erro && data.bairro) { bairroInput.value = data.bairro; validarBairro(); syncReview(); }
+                } catch (error) { console.error('Erro ao buscar CEP:', error); }
             }
 
             document.querySelectorAll('[data-next]').forEach(function(button) {
                 button.addEventListener('click', function() {
                     const target = button.dataset.next;
-                    if (target === 'escolher' && !validarPassoDados()) {
-                        return;
-                    }
-                    if (target === 'revisao' && !validarPassoEscolher()) {
-                        return;
-                    }
+                    if (target === 'escolher' && !validarPassoDados()) return;
+                    if (target === 'revisao' && !validarPassoEscolher()) return;
                     syncReview();
                     mostrarPasso(target);
                 });
             });
 
             document.querySelectorAll('[data-prev]').forEach(function(button) {
-                button.addEventListener('click', function() {
-                    syncReview();
-                    mostrarPasso(button.dataset.prev);
-                });
+                button.addEventListener('click', function() { syncReview(); mostrarPasso(button.dataset.prev); });
             });
 
             form.addEventListener('submit', function(event) {
-                const dadosValidos = validarPassoDados();
-                if (!dadosValidos) {
-                    event.preventDefault();
-                    mostrarPasso('dados');
-                    return;
-                }
-
+                if (!validarPassoDados()) { event.preventDefault(); mostrarPasso('dados'); return; }
                 syncReview();
-                if (!validarPassoRevisao()) {
-                    event.preventDefault();
-                    mostrarPasso('revisao');
-                }
+                if (!validarPassoRevisao()) { event.preventDefault(); mostrarPasso('revisao'); }
             });
 
             nomeInput.addEventListener('blur', validarNome);
             generoInput.addEventListener('change', validarGenero);
             cpfInput.addEventListener('input', function() {
                 aplicarMascaraCPF();
-                if (somenteDigitos(cpfInput.value).length === 11) {
-                    validarCampoCPF();
-                } else {
-                    setError('cpf', '');
-                }
+                if (somenteDigitos(cpfInput.value).length === 11) validarCampoCPF(); else setError('cpf', '');
                 syncReview();
             });
-            nascimentoInput.addEventListener('input', function() {
-                aplicarMascaraNascimento();
-                syncReview();
-            });
+            nascimentoInput.addEventListener('input', function() { aplicarMascaraNascimento(); syncReview(); });
             nascimentoInput.addEventListener('blur', validarNascimento);
             whatsappInput.addEventListener('input', function() {
                 aplicarMascaraWhatsapp();
-                if (somenteDigitos(whatsappInput.value).length >= 10) {
-                    validarWhatsapp();
-                } else {
-                    setError('whatsapp', '');
-                }
+                if (somenteDigitos(whatsappInput.value).length >= 10) validarWhatsapp(); else setError('whatsapp', '');
                 syncReview();
             });
             cepInput.addEventListener('input', function() {
-                aplicarMascaraCep();
-                bairroInput.value = '';
-                if (cepInput.value.length === 9) {
-                    validarCampoCep();
-                    buscarBairroPorCep();
-                } else {
-                    setError('cep', '');
-                }
+                aplicarMascaraCep(); bairroInput.value = '';
+                if (cepInput.value.length === 9) { validarCampoCep(); buscarBairroPorCep(); } else setError('cep', '');
                 syncReview();
             });
-            bairroInput.addEventListener('blur', function() {
-                validarBairro();
-                syncReview();
-            });
+            bairroInput.addEventListener('blur', function() { validarBairro(); syncReview(); });
             emailInput.addEventListener('input', function() {
-                if (emailInput.value.trim()) {
-                    validarCampoEmail();
-                } else {
-                    setError('email', '');
-                }
+                if (emailInput.value.trim()) validarCampoEmail(); else setError('email', '');
                 syncReview();
             });
             localSelect.addEventListener('change', function() {
@@ -2015,21 +1455,14 @@ TEMPLATE_WIZARD = r'''
                 setError('curso_id', '');
                 syncReview();
             });
-            optionInput.addEventListener('change', function() {
-                aplicarOpcaoCurso(optionInput.value);
-                syncReview();
-            });
+            optionInput.addEventListener('change', function() { aplicarOpcaoCurso(optionInput.value); syncReview(); });
             confirmaDadosInput.addEventListener('change', function() {
-                if (confirmaDadosInput.checked) {
-                    setError('confirma_dados', '');
-                }
+                if (confirmaDadosInput.checked) setError('confirma_dados', '');
             });
 
-            ['nome', 'genero', 'whatsapp', 'cep', 'bairro', 'email', 'local_id', 'curso_id', 'opcao_id', 'local', 'curso', 'turma', 'dias_aula', 'horario', 'data_inicio', 'encerramento', 'endereco_curso', 'como_conheceu'].forEach(function(fieldId) {
+            ['nome','genero','whatsapp','cep','bairro','email','local_id','curso_id','opcao_id','local','curso','turma','dias_aula','horario','data_inicio','encerramento','endereco_curso','como_conheceu'].forEach(function(fieldId) {
                 const field = document.getElementById(fieldId);
-                if (!field) {
-                    return;
-                }
+                if (!field) return;
                 field.addEventListener('input', syncReview);
                 field.addEventListener('change', syncReview);
             });
@@ -2038,15 +1471,13 @@ TEMPLATE_WIZARD = r'''
                 btnCopiarEndereco.addEventListener('click', async function() {
                     try {
                         await navigator.clipboard.writeText(enderecoInput.value);
-                        btnCopiarEndereco.textContent = 'COPIADO ✅';
+                        btnCopiarEndereco.textContent = 'COPIADO &#10003;';
                     } catch (error) {
                         enderecoInput.select();
                         document.execCommand('copy');
-                        btnCopiarEndereco.textContent = 'COPIADO ✅';
+                        btnCopiarEndereco.textContent = 'COPIADO &#10003;';
                     }
-                    setTimeout(function() {
-                        btnCopiarEndereco.textContent = 'COPIAR 📋';
-                    }, 1200);
+                    setTimeout(function() { btnCopiarEndereco.textContent = 'COPIAR &#128203;'; }, 1200);
                 });
             }
 
@@ -2069,7 +1500,6 @@ TEMPLATE_CONFIRMACAO = r'''
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <!-- IMPORTANTE! viewport responsivo para celular -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>FGM</title>
     <link rel="stylesheet" href="/static/style.css">
@@ -2088,317 +1518,53 @@ TEMPLATE_CONFIRMACAO = r'''
         fbq('track', 'PageView');
     </script>
     <style>
-        :root {
-            --cor-principal: #1155cc;
-            --cor-clara: #eef4ff;
-            --cor-texto: #17386d;
-            --sombra-card: 0 18px 55px rgba(17, 85, 204, 0.18);
-        }
-
-        body {
-            min-height: 100vh;
-            margin: 0;
-            background:
-                radial-gradient(circle at top left, rgba(17, 85, 204, 0.15), transparent 32%),
-                linear-gradient(140deg, #f5f9ff 0%, #fff 55%, #dfeaff 100%);
-            font-family: 'Wise', Arial, sans-serif;
-        }
-
-        .main-header {
-            border-bottom: 4px solid #1155cc;
-            background: rgba(255, 255, 255, 0.92);
-        }
-
-        .confirm-page {
-            width: min(680px, calc(100% - 16px));
-            margin: 0 auto;
-            padding: 10px 0 20px;
-            text-align: center;
-        }
-
-        .wizard-progress {
-            margin: 12px auto 16px;
-            padding: 14px 14px 16px;
-            border-radius: 28px;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 12px 30px rgba(17, 85, 204, 0.12);
-        }
-
-        .wizard-track {
-            width: 100%;
-            height: 14px;
-            border-radius: 999px;
-            background: #dbe6fb;
-            overflow: hidden;
-        }
-
-        .wizard-fill {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, #1155cc 0%, #4f86ea 100%);
-            border-radius: 999px;
-        }
-
-        .wizard-labels {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
-            margin-top: 12px;
-        }
-
-        .wizard-label {
-            padding: 10px 8px;
-            border: 1px solid #c9daf8;
-            border-radius: 16px;
-            background: #fff;
-            color: #2f5fb4;
-            font-size: 0.84rem;
-            font-weight: 700;
-            text-align: center;
-        }
-
-        .wizard-label.ativo {
-            border-color: var(--cor-principal);
-            background: var(--cor-clara);
-            color: var(--cor-principal);
-        }
-
-        .confirm-shell {
-            background: rgba(255, 255, 255, 0.88);
-            border: 1px solid rgba(255, 255, 255, 0.9);
-            border-radius: 30px;
-            box-shadow: var(--sombra-card);
-            overflow: hidden;
-            text-align: center;
-        }
-
-        .confirm-card {
-            padding: 20px 16px 18px;
-            border-radius: 0;
-            background: transparent;
-            box-shadow: none;
-            text-align: center;
-            max-width: 620px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .checkmark {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 12px;
-        }
-
-        .checkmark svg {
-            width: 100%;
-            height: 100%;
-            stroke: #1155cc;
-            fill: none;
-        }
-
-        .confirm-card h1 {
-            margin: 0 0 10px;
-            color: #1155cc;
-            font-size: clamp(1.8rem, 4vw, 2.6rem);
-            letter-spacing: -0.04em;
-        }
-
-        .confirm-card p {
-            margin: 0;
-            color: #2f5fb4;
-            line-height: 1.6;
-            font-size: 1rem;
-        }
-
-        .protocol-box {
-            margin: 16px auto 12px;
-            padding: 14px;
-            max-width: 320px;
-            border-radius: 16px;
-            background: #eef4ff;
-            border: 2px solid #1155cc;
-        }
-
-        .protocol-box strong {
-            display: block;
-            color: #1155cc;
-            font-size: 0.98rem;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-        }
-
-        .protocol-box span {
-            display: block;
-            color: #1155cc;
-            font-size: 1.35rem;
-            font-weight: 900;
-            letter-spacing: 0.08em;
-            word-break: break-all;
-        }
-
-        .next-steps {
-            margin: 16px auto 0;
-            max-width: 460px;
-            padding: 14px;
-            text-align: center;
-            border-radius: 18px;
-            background: #fff;
-            border: 1px solid #d7e3fb;
-        }
-
-        .next-steps h2 {
-            margin: 0 0 12px;
-            color: #1155cc;
-            font-size: 1.2rem;
-        }
-
-        .next-steps ol {
-            margin: 0;
-            padding-left: 22px;
-            color: #2f5fb4;
-            line-height: 1.55;
-            text-align: center;
-            list-style-position: inside;
-        }
-
-        .actions {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-            margin-top: 16px;
-            max-width: 380px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .action-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 42px;
-            padding: 10px 14px;
-            border-radius: 12px;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: 800;
-            letter-spacing: 0.03em;
-            text-align: center;
-            transition: transform 0.16s ease, box-shadow 0.16s ease;
-        }
-
-        .action-button.primary {
-            background: linear-gradient(90deg, #1155cc 0%, #4f86ea 100%);
-            color: #fff;
-            box-shadow: 0 10px 24px rgba(17, 85, 204, 0.24);
-        }
-
-        .action-button.secondary {
-            background: #fff;
-            color: #1155cc;
-            border: 2px solid #1155cc;
-        }
-
-        .action-button:hover {
-            transform: translateY(-1px);
-        }
-
+        :root { --cor-principal: #1155cc; --cor-clara: #eef4ff; --cor-texto: #17386d; --sombra-card: 0 18px 55px rgba(17, 85, 204, 0.18); }
+        body { min-height: 100vh; margin: 0; background: radial-gradient(circle at top left, rgba(17,85,204,0.15), transparent 32%), linear-gradient(140deg, #f5f9ff 0%, #fff 55%, #dfeaff 100%); font-family: 'Wise', Arial, sans-serif; }
+        .main-header { border-bottom: 4px solid #1155cc; background: rgba(255,255,255,0.92); }
+        .confirm-page { width: min(680px, calc(100% - 16px)); margin: 0 auto; padding: 10px 0 20px; text-align: center; }
+        .wizard-progress { margin: 12px auto 16px; padding: 14px 14px 16px; border-radius: 28px; background: rgba(255,255,255,0.9); box-shadow: 0 12px 30px rgba(17,85,204,0.12); }
+        .wizard-track { width: 100%; height: 14px; border-radius: 999px; background: #dbe6fb; overflow: hidden; }
+        .wizard-fill { width: 100%; height: 100%; background: linear-gradient(90deg,#1155cc 0%,#4f86ea 100%); border-radius: 999px; }
+        .wizard-labels { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin-top: 12px; }
+        .wizard-label { padding: 10px 8px; border: 1px solid #c9daf8; border-radius: 16px; background: #fff; color: #2f5fb4; font-size: 0.84rem; font-weight: 700; text-align: center; }
+        .wizard-label.ativo { border-color: var(--cor-principal); background: var(--cor-clara); color: var(--cor-principal); }
+        .confirm-shell { background: rgba(255,255,255,0.88); border: 1px solid rgba(255,255,255,0.9); border-radius: 30px; box-shadow: var(--sombra-card); overflow: hidden; text-align: center; }
+        .confirm-card { padding: 20px 16px 18px; background: transparent; text-align: center; max-width: 620px; margin-left: auto; margin-right: auto; }
+        .checkmark { width: 120px; height: 120px; margin: 0 auto 12px; }
+        .checkmark svg { width: 100%; height: 100%; stroke: #1155cc; fill: none; }
+        .confirm-card h1 { margin: 0 0 10px; color: #1155cc; font-size: clamp(1.8rem,4vw,2.6rem); letter-spacing: -0.04em; }
+        .confirm-card p { margin: 0; color: #2f5fb4; line-height: 1.6; font-size: 1rem; }
+        .protocol-box { margin: 16px auto 12px; padding: 14px; max-width: 320px; border-radius: 16px; background: #eef4ff; border: 2px solid #1155cc; }
+        .protocol-box strong { display: block; color: #1155cc; font-size: 0.98rem; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.04em; }
+        .protocol-box span { display: block; color: #1155cc; font-size: 1.35rem; font-weight: 900; letter-spacing: 0.08em; word-break: break-all; }
+        .next-steps { margin: 16px auto 0; max-width: 460px; padding: 14px; text-align: center; border-radius: 18px; background: #fff; border: 1px solid #d7e3fb; }
+        .next-steps h2 { margin: 0 0 12px; color: #1155cc; font-size: 1.2rem; }
+        .next-steps ol { margin: 0; padding-left: 22px; color: #2f5fb4; line-height: 1.55; list-style-position: inside; }
+        .actions { display: grid; gap: 10px; margin-top: 16px; max-width: 380px; margin-left: auto; margin-right: auto; }
+        .action-button { display: flex; align-items: center; justify-content: center; min-height: 42px; padding: 10px 14px; border-radius: 12px; text-decoration: none; text-transform: uppercase; font-weight: 800; letter-spacing: 0.03em; transition: transform 0.16s ease; }
+        .action-button.primary { background: linear-gradient(90deg,#1155cc 0%,#4f86ea 100%); color: #fff; box-shadow: 0 10px 24px rgba(17,85,204,0.24); }
+        .action-button.secondary { background: #fff; color: #1155cc; border: 2px solid #1155cc; }
+        .action-button:hover { transform: translateY(-1px); }
         @media (max-width: 640px) {
-            html,
-            body {
-                width: 100% !important;
-                max-width: 100% !important;
-                overflow-x: hidden !important;
-            }
-
-            body * {
-                min-width: 0;
-            }
-
-            body {
-                overflow-x: hidden;
-            }
-
-            .main-header {
-                padding: 10px 12px;
-            }
-
-            .header-logos {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-
-            .header-logos img,
-            .logo,
-            .logo-prefeitura-topo {
-                max-width: min(88vw, 280px);
-                height: auto;
-            }
-
-            .confirm-page {
-                width: calc(100% - 8px) !important;
-                max-width: 100% !important;
-                padding: 6px 0 12px;
-            }
-
-            .confirm-card {
-                width: 100% !important;
-                max-width: 100% !important;
-                padding: 14px 10px 12px;
-            }
-
-            .wizard-progress {
-                width: 100% !important;
-                max-width: 100% !important;
-                padding: 10px;
-                border-radius: 18px;
-            }
-
-            .wizard-labels {
-                grid-template-columns: 1fr;
-                gap: 6px;
-            }
-
-            .confirm-shell {
-                width: 100% !important;
-                max-width: 100% !important;
-                border-radius: 18px;
-            }
-
-            .protocol-box span {
-                font-size: 1.3rem;
-            }
-
-            .next-steps {
-                width: 100% !important;
-                max-width: 100% !important;
-                padding: 10px;
-            }
-
-            .actions,
-            .action-button,
-            .protocol-box,
-            .next-steps,
-            .wizard-label,
-            .wizard-track {
-                width: 100% !important;
-                max-width: 100% !important;
-            }
-
-            img,
-            svg {
-                max-width: 100% !important;
-                height: auto !important;
-            }
+            html,body { width:100%!important; max-width:100%!important; overflow-x:hidden!important; }
+            body * { min-width:0; }
+            .main-header { padding: 10px 12px; }
+            .header-logos { display:flex; flex-direction:column; align-items:center; gap:10px; }
+            .header-logos img { max-width: min(88vw,280px); height:auto; }
+            .confirm-page { width:calc(100% - 8px)!important; max-width:100%!important; padding:6px 0 12px; }
+            .confirm-card { width:100%!important; max-width:100%!important; padding:14px 10px 12px; }
+            .wizard-progress { width:100%!important; max-width:100%!important; padding:10px; border-radius:18px; }
+            .wizard-labels { grid-template-columns:1fr; gap:6px; }
+            .confirm-shell { width:100%!important; max-width:100%!important; border-radius:18px; }
+            .protocol-box span { font-size:1.3rem; }
+            .next-steps,.actions,.action-button,.protocol-box,.wizard-label,.wizard-track { width:100%!important; max-width:100%!important; }
+            img,svg { max-width:100%!important; height:auto!important; }
         }
     </style>
 </head>
 <body>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=2008632536670997&ev=PageView&noscript=1"
-    /></noscript>
+    src="https://www.facebook.com/tr?id=2008632536670997&ev=PageView&noscript=1"/></noscript>
     <script src="/static/assistant.js"></script>
     <header class="main-header">
         <div class="header-logos">
@@ -2425,18 +1591,15 @@ TEMPLATE_CONFIRMACAO = r'''
                         <polyline points="60,110 95,145 145,75" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"></polyline>
                     </svg>
                 </div>
-
                 <h1>Inscrição realizada com sucesso</h1>
                 <div class="protocol-box">
                     <strong>Número de protocolo</strong>
                     <span>{{ protocolo }}</span>
                 </div>
-
                 <div class="actions">
                     <a class="action-button primary" href="{{ whatsapp_share_url }}" target="_blank" rel="noopener noreferrer">Compartilhar no WhatsApp</a>
                     <a class="action-button secondary" href="{{ url_for('home') }}">Voltar ao início</a>
                 </div>
-
                 <div class="next-steps">
                     <h2>Próximos passos</h2>
                     <ol>
@@ -2489,7 +1652,6 @@ def get_default_form_data(source=None):
                 form_data[key] = "sim" if value else ""
             else:
                 form_data[key] = (value or "").strip()
-
         fill_form_data_from_selection(form_data)
 
     return form_data
@@ -2499,13 +1661,11 @@ def cpf_valido(cpf):
     digits = re.sub(r"\D", "", cpf or "")
     if len(digits) != 11 or len(set(digits)) == 1:
         return False
-
     total = sum(int(digits[index]) * (10 - index) for index in range(9))
     digit = (total * 10) % 11
     digit = 0 if digit == 10 else digit
     if digit != int(digits[9]):
         return False
-
     total = sum(int(digits[index]) * (11 - index) for index in range(10))
     digit = (total * 10) % 11
     digit = 0 if digit == 10 else digit
@@ -2516,7 +1676,6 @@ def idade_aceita(nascimento):
         data_nascimento = datetime.strptime(nascimento, "%d/%m/%Y")
     except ValueError:
         return False
-
     hoje = datetime.today()
     idade = hoje.year - data_nascimento.year
     if (hoje.month, hoje.day) < (data_nascimento.month, data_nascimento.day):
@@ -2558,16 +1717,12 @@ def validate_form_data(form_data):
 
     if form_data["genero"] not in {"Feminino", "Masculino", "Outro", "Prefiro não dizer"}:
         errors["genero"] = "Selecione o gênero."
-
     if not cpf_valido(form_data["cpf"]):
         errors["cpf"] = "CPF inválido. Verifique e digite novamente."
-
     if not idade_aceita(form_data["nascimento"]):
         errors["nascimento"] = "Idade permitida: de 16 até 90 anos."
-
     if not whatsapp_valido(form_data["whatsapp"]):
         errors["whatsapp"] = "Informe um WhatsApp com DDD válido do Brasil."
-
     if not re.fullmatch(r"\d{5}-\d{3}", form_data["cep"] or ""):
         errors["cep"] = "CEP inválido. Formato: 00000-000."
 
@@ -2579,7 +1734,6 @@ def validate_form_data(form_data):
 
     if not ALLOWED_EMAIL_PATTERN.fullmatch(form_data["email"] or ""):
         errors["email"] = "Digite um e-mail válido do Gmail, Hotmail, Outlook ou Yahoo."
-
     if form_data["confirma_dados"] != "sim":
         errors["confirma_dados"] = "Confirme os dados para finalizar a inscrição."
 
@@ -2687,7 +1841,7 @@ def confirmacao():
     )
 
 
-# --- SUPABASE ENDPOINT E FUNÇÕES ---
+# --- SUPABASE ---
 import requests
 
 SUPABASE_FUNCTION_URL = os.environ.get(
@@ -2726,9 +1880,7 @@ def send_registration_to_supabase(form_data):
     }
     response = requests.post(SUPABASE_FUNCTION_URL, headers=headers, json=payload, timeout=10)
     if not response.ok:
-        raise RuntimeError(
-            f"Supabase retornou {response.status_code}: {response.text[:500]}"
-        )
+        raise RuntimeError(f"Supabase retornou {response.status_code}: {response.text[:500]}")
     return response
 
 if __name__ == "__main__":
